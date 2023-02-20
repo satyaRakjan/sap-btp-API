@@ -1,0 +1,17 @@
+[
+  {
+    "materialCode": "MT01",
+    "matertialDes": "ถ่านหิน",
+    "DesEng": "coal"
+  },
+  {
+    "materialCode": "MT02",
+    "matertialDes": "ปูนขาว",
+    "DesEng": "lime"
+  },
+  {
+    "materialCode": "MT03",
+    "matertialDes": "ทราย",
+    "DesEng": "sand"
+  }
+]

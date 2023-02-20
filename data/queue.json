@@ -1,0 +1,102 @@
+[
+  {
+    "queueNo": "A-1002221209-0010",
+    "Truckcode": "1234-01-2/ตก",
+    "TruckType": "0004 รถพ่วง",
+    "date": "20/01/2023",
+    "dateTime": "01:24 PM",
+    "sequence": "รอขึ้นลง",
+    "vendor": {
+      "vendorCode": "VD01",
+      "vendorlDes": "INTEQC"
+    },
+    "material": {
+      "materialCode": "MT01",
+      "matertialDes": "ถ่านหิน",
+      "DesEng": "coal"
+    },
+    "inspection": [
+      {
+        "inspecRound": 1,
+        "listInspec": [
+          {
+            "inspecName": "%Dry",
+            "Specifications": "< 13.0",
+            "summry": "15.0"
+          },
+          {
+            "Characteristic": "%Contaminated",
+            "Specifications": "> 45.0",
+            "summry": "45.0"
+          },
+          {
+            "Characteristic": "%Completeion",
+            "Specifications": "ผลตรวจด้านกายภาพ : ผ่าน",
+            "summry": "ผ่าน"
+          }
+        ],
+        "summryResult": "ผ่าน",
+        "changeGrade": true,
+        "deductPrice": "5,000.00"
+      }
+    ],
+    "weight": {
+      "truckWeightID": "TW01",
+      "weightIn": "5000",
+      "weightOut": "0.000",
+      "weightSummary": "5000",
+      "dateTimeIn": "20/01/2023 01:30 PM",
+      "dateTimeOut": "20/01/2023 02:00 PM"
+    }
+  },
+  {
+    "queueNo": "A-1002221209-0011",
+    "Truckcode": "1234-01-2/ตก",
+    "TruckType": "0004 รถพ่วง",
+    "date": "20/01/2023",
+    "dateTime": "01:24 PM",
+    "sequence": "รอขึ้นลง",
+    "vendor": {
+      "vendorCode": "VD01",
+      "vendorlDes": "INTEQC"
+    },
+    "material": {
+      "materialCode": "MT01",
+      "matertialDes": "ถ่านหิน",
+      "DesEng": "coal"
+    },
+    "inspection": [
+      {
+        "inspecRound": 1,
+        "listInspec": [
+          {
+            "inspecName": "%Dry",
+            "Specifications": "< 13.0",
+            "summry": "15.0"
+          },
+          {
+            "Characteristic": "%Contaminated",
+            "Specifications": "> 45.0",
+            "summry": "45.0"
+          },
+          {
+            "Characteristic": "%Completeion",
+            "Specifications": "ผลตรวจด้านกายภาพ : ผ่าน",
+            "summry": "ผ่าน"
+          }
+        ],
+        "summryResult": "ผ่าน",
+        "changeGrade": true,
+        "deductPrice": "5,000.00"
+      }
+    ],
+    "weight": {
+      "truckWeightID": "TW01",
+      "weightIn": "5000",
+      "weightOut": "0.000",
+      "weightSummary": "5000",
+      "dateTimeIn": "20/01/2023 01:30 PM",
+      "dateTimeOut": "20/01/2023 02:00 PM"
+    }
+  }
+]
