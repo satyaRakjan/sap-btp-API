@@ -39,14 +39,20 @@ app.get("/queues", async (req, res) => {
   const date = req.query.date;
   if (queueNo) {
     results = Queue.find((element) => element.queueNo == queueNo);
-    if (typeof queueNo !== "undefined") {
-    } else {
-      if (typeof date !== "undefined") {
-        results = Queue.filter((element) => element.date == date);
-      }
-    }
+    // if (typeof queueNo !== "undefined") {
+    // } else {
+    //   if (typeof date !== "undefined") {
+    //     results = Queue.filter((element) => element.date == date);
+    //     console.log("date");
+    //   }
+    // }
   } else {
-    results = Queue;
+    if (typeof date !== "undefined") {
+      results = Queue.filter((element) => element.date == date);
+      console.log("date");
+    } else {
+      results = Queue;
+    }
   }
   res.send(results).status(200);
   // for (const [key, value] of Object.entries(req.query)) {
