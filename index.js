@@ -36,7 +36,7 @@ app.get("/queues", async (req, res) => {
   let results;
   const queueNo = req.query.queueNo;
   const date = req.query.date;
-
+  console.log(req.query);
   if (queueNo) {
     results = Queue.find((element) => element.queueNo == queueNo);
     // if (typeof queueNo !== "undefined") {
