@@ -32,20 +32,58 @@ app.set("trust proxy", true);
 // app.use("/api", api);
 
 app.get("/queues", async (req, res) => {
+  // var queueData = Queue;
+  let results;
   const queueNo = req.query.queueNo;
-  var results;
-  console.log(queueNo);
-  console.log(Queue);
-  if (typeof queueNo === "undefined") {
-    // results = await collection.find({}).toArray();
-    results = Queue;
+  // console.log(req.query);
+  const date = req.query.date;
+  if (queueNo) {
+    results = Queue.find((element) => element.queueNo == queueNo);
+    if (typeof queueNo !== "undefined") {
+    } else {
+      if (typeof date !== "undefined") {
+        results = Queue.filter((element) => element.date == date);
+      }
+    }
   } else {
-    results = Queue.find((element) => element.queueNo === queueNo);
-    // let query = { queueNo: queueNo };
-    // results = await collection.findOne(query);
+    results = Queue;
   }
-
   res.send(results).status(200);
+  // for (const [key, value] of Object.entries(req.query)) {
+  //   console.log(`${key}: ${value.length}`);
+  // }
+  // if (queueNo === "undefined" && date === "undefined") {
+  //   results = Queue;
+  // } else {
+  //   console.log(queueNo);
+  //   console.log(date);
+  // }
+  // res.send(results).status(200);
+  // for (const [key, value] of Object.entries(query)) {
+  //   // if (typeof value !== "undefined") {
+  //   // } else { }
+  //   // console.log(value);
+  //   Object.entries(value).forEach(([key2, value2]) => {
+  //     if (typeof value2 !== "undefined") {
+  //       if (value2.length > 0) {
+  //         Queue.find((element) => element[key2] == value2);
+  //         res.send(Queue).status(200);
+  //       }
+  //     }
+  //   });
+  // }
+
+  // console.log(queueNo.length);
+  // console.log(queueNo);
+
+  // if (typeof queueNo === "undefined") {
+  //   // results = await collection.find({}).toArray();
+  //   results = Queue;
+  // } else {
+  //   results = Queue.find((element) => element.queueNo === queueNo);
+  //   // let query = { queueNo: queueNo };
+  //   // results = await collection.findOne(query);
+  // }
 });
 
 app.get("/queues/:id", async (req, res) => {
