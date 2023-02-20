@@ -8,11 +8,23 @@ const uri = process.env.MONGO_HOST;
 const client = new MongoClient(uri);
 const database = client.db("btp");
 
+async function run(req, res) {
+  try {
+    const collection = database.collection("queues");
+    const result = await collection.find({}).toArray();
+    console.log(result);
+    res.send(result).status(200);
+  } finally {
+    await client.close();
+  }
+}
+
 router.get("/queues", async (req, res) => {
-  let collection = await database.collection("queues");
-  let results = await collection.find({}).toArray();
+  //   let collection = await database.collection("queues");
+  //   let results = await collection.find({}).toArray();
   // const queues = await Queue.find({});
-  res.send(results).status(200);
+
+  run(req, res);
 });
 
 router.get("/queues/:id", async (req, res) => {
