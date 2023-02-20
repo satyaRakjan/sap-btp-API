@@ -32,7 +32,20 @@ app.set("trust proxy", true);
 // app.use("/api", api);
 
 app.get("/queues", async (req, res) => {
-  res.send(Queue).status(200);
+  const queueNo = req.query.queueNo;
+  var results;
+  console.log(queueNo);
+  console.log(Queue);
+  if (typeof queueNo === "undefined") {
+    // results = await collection.find({}).toArray();
+    results = Queue;
+  } else {
+    results = Queue.find((element) => element.queueNo === queueNo);
+    // let query = { queueNo: queueNo };
+    // results = await collection.findOne(query);
+  }
+
+  res.send(results).status(200);
 });
 
 // app.get("/queues/:id", async (req, res) => {
