@@ -35,8 +35,8 @@ app.get("/queues", async (req, res) => {
   // var queueData = Queue;
   let results;
   const queueNo = req.query.queueNo;
-  // console.log(req.query);
   const date = req.query.date;
+
   if (queueNo) {
     results = Queue.find((element) => element.queueNo == queueNo);
     // if (typeof queueNo !== "undefined") {
@@ -47,9 +47,8 @@ app.get("/queues", async (req, res) => {
     //   }
     // }
   } else {
-    if (typeof date !== "undefined") {
+    if (date) {
       results = Queue.filter((element) => element.date == date);
-      console.log("date");
     } else {
       results = Queue;
     }
@@ -92,21 +91,21 @@ app.get("/queues", async (req, res) => {
   // }
 });
 
-app.get("/queues/:id", async (req, res) => {
-  const { id } = req.params;
-  var result = Queue.find((element) => element.queueNo === id);
-  if (typeof result === "undefined") {
-    result = "Not Found";
-  } else {
-  }
-  res.send(result).status(200);
-  // let collection = await database.collection("queues");
-  // let query = { queueNo: id };
-  // let result = await collection.findOne(query);
+// app.get("/queues/:id", async (req, res) => {
+//   const { id } = req.params;
+//   var result = Queue.find((element) => element.queueNo === id);
+//   if (typeof result === "undefined") {
+//     result = "Not Found";
+//   } else {
+//   }
+//   res.send(result).status(200);
+//   // let collection = await database.collection("queues");
+//   // let query = { queueNo: id };
+//   // let result = await collection.findOne(query);
 
-  // if (!result) res.send("Not found").status(404);
-  // else res.send(result).status(200);
-});
+//   // if (!result) res.send("Not found").status(404);
+//   // else res.send(result).status(200);
+// });
 
 app.post("/queues", async (req, res) => {
   const payload = req.body;
