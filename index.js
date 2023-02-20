@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 9000;
 const ngrok = require("ngrok");
 var cors = require("cors");
-
+const Queue = require("./data/queue.json");
 app.use(express.json());
 // const corsOptions = {
 //   origin: "https://daae-101-109-242-76.ap.ngrok.io",
@@ -29,13 +29,11 @@ app.use(function (req, res, next) {
   next();
 });
 app.set("trust proxy", true);
-app.use("/api", api);
+// app.use("/api", api);
 
-// app.get("/queues", async (req, res) => {
-//   let collection = await database.collection("queues");
-//   let results = await collection.find({}).toArray();
-//   res.send(results).status(200);
-// });
+app.get("/queues", async (req, res) => {
+  res.send(Queue).status(200);
+});
 
 // app.get("/queues/:id", async (req, res) => {
 
