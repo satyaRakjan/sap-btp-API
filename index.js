@@ -48,23 +48,30 @@ app.get("/queues", async (req, res) => {
   res.send(results).status(200);
 });
 
-// app.get("/queues/:id", async (req, res) => {
+app.get("/queues/:id", async (req, res) => {
+  const { id } = req.params;
+  var result = Queue.find((element) => element.queueNo === id);
+  if (typeof result === "undefined") {
+    result = "Not Found";
+  } else {
+  }
+  res.send(result).status(200);
+  // let collection = await database.collection("queues");
+  // let query = { queueNo: id };
+  // let result = await collection.findOne(query);
 
-//   const { id } = req.params;
-//   let collection = await database.collection("queues");
-//   let query = { queueNo: id };
-//   let result = await collection.findOne(query);
+  // if (!result) res.send("Not found").status(404);
+  // else res.send(result).status(200);
+});
 
-//   if (!result) res.send("Not found").status(404);
-//   else res.send(result).status(200);
-// });
-
-// app.post("/queues", async (req, res) => {
-//   let collection = await database.collection("queues");
-//   let newDocument = req.body;
-//   let result = await collection.insertOne(newDocument);
-//   res.send(result).status(204);
-// });
+app.post("/queues", async (req, res) => {
+  const payload = req.body;
+  Queue.push(payload);
+  res.status(201).json(req.body + " : was Created");
+  // let collection = await database.collection("queues");
+  // let result = await collection.insertOne(newDocument);
+  // res.send(result).status(204);
+});
 
 app.listen(PORT, () => {
   console.log(`Application is running on port ${PORT}`);
