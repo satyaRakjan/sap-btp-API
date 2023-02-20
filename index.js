@@ -116,3 +116,5 @@ app.post("/queues", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Application is running on port ${PORT}`);
 });
+
+module.exports = app;
