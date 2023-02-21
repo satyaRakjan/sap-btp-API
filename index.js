@@ -59,7 +59,7 @@ app.get("/queues", async (req, res) => {
       console.log(formatDate);
       results = Queue.filter((element) => element.date == formatDate);
     } else if (queueNo && queueNo.length > 0) {
-      results = Queue.find((element) => element.queueNo == queueNo);
+      results = Queue.filter((element) => element.queueNo == queueNo);
     } else {
       results = Queue;
     }
