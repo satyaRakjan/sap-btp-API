@@ -50,9 +50,9 @@ app.get("/queues", async (req, res) => {
       (element) => element.queueNo == queueNo && element.date == date
     );
   } else {
-    if (date.length > 0) {
+    if (date && date.length > 0) {
       results = Queue.filter((element) => element.date == date);
-    } else if (queueNo.length > 0) {
+    } else if (queueNo && queueNo.length > 0) {
       results = Queue.find((element) => element.queueNo == queueNo);
     } else {
       results = Queue;
