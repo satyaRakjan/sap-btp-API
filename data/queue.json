@@ -17,13 +17,13 @@
       "DesEng": "coal"
     },
     "inspection": {
-      "%Dry": null,
-      "%Contaminated": null,
-      "%Complete": null,
-      "ChangeFlag": null,
-      "ChangeMat": null,
-      "DeductFlag": null,
-      "DeductPrice": null
+      "%Dry": "",
+      "%Contaminated": "",
+      "%Complete": "",
+      "ChangeFlag": "",
+      "ChangeMat": "",
+      "DeductFlag": "",
+      "DeductPrice": ""
     },
     "weight": {
       "truckWeightID": "TW01",
@@ -52,13 +52,13 @@
       "DesEng": "coal"
     },
     "inspection": {
-      "%Dry": null,
-      "%Contaminated": null,
-      "%Complete": null,
-      "ChangeFlag": null,
-      "ChangeMat": null,
-      "DeductFlag": null,
-      "DeductPrice": null
+      "%Dry": "",
+      "%Contaminated": "",
+      "%Complete": "",
+      "ChangeFlag": "",
+      "ChangeMat": "",
+      "DeductFlag": "",
+      "DeductPrice": ""
     },
     "weight": {
       "truckWeightID": "TW01",
@@ -87,13 +87,13 @@
       "DesEng": "coal"
     },
     "inspection": {
-      "%Dry": null,
-      "%Contaminated": null,
-      "%Complete": null,
-      "ChangeFlag": null,
-      "ChangeMat": null,
-      "DeductFlag": null,
-      "DeductPrice": null
+      "%Dry": "",
+      "%Contaminated": "",
+      "%Complete": "",
+      "ChangeFlag": "",
+      "ChangeMat": "",
+      "DeductFlag": "",
+      "DeductPrice": ""
     },
     "weight": {
       "truckWeightID": "TW01",
