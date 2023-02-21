@@ -119,21 +119,21 @@ app.get("/queues", async (req, res) => {
   // }
 });
 
-// app.get("/queues/:id", async (req, res) => {
-//   const { id } = req.params;
-//   var result = Queue.find((element) => element.queueNo === id);
-//   if (typeof result === "undefined") {
-//     result = "Not Found";
-//   } else {
-//   }
-//   res.send(result).status(200);
-//   // let collection = await database.collection("queues");
-//   // let query = { queueNo: id };
-//   // let result = await collection.findOne(query);
+app.get("/queues/:id", async (req, res) => {
+  const { id } = req.params;
+  var result = Queue.find((element) => element.queueNo === id);
+  if (typeof result === "undefined") {
+    result = "Not Found";
+  } else {
+  }
+  res.send(result).status(200);
+  // let collection = await database.collection("queues");
+  // let query = { queueNo: id };
+  // let result = await collection.findOne(query);
 
-//   // if (!result) res.send("Not found").status(404);
-//   // else res.send(result).status(200);
-// });
+  // if (!result) res.send("Not found").status(404);
+  // else res.send(result).status(200);
+});
 
 app.post("/queues", async (req, res) => {
   const payload = req.body;
