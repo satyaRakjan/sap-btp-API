@@ -50,7 +50,7 @@ app.get("/queues", async (req, res) => {
   // results = Queue.filter((element) => element.date == date);
   const { queueNo = null, date = null } = req.query;
   if (queueNo && date) {
-    results = Queue.find(
+    results = Queue.filter(
       (element) => element.queueNo == queueNo && element.date == date
     );
   } else {
@@ -105,10 +105,6 @@ app.get("/queues", async (req, res) => {
   //     }
   //   });
   // }
-
-  // console.log(queueNo.length);
-  // console.log(queueNo);
-
   // if (typeof queueNo === "undefined") {
   //   // results = await collection.find({}).toArray();
   //   results = Queue;
