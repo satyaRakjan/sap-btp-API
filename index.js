@@ -38,16 +38,8 @@ app.set("trust proxy", true);
 // app.use("/api", api);
 
 app.get("/queues", async (req, res) => {
-  // var queueData = Queue;
   let results;
-  // const queueNo = req.query.queueNo;
-  // const date = req.query.date;
 
-  // for (const [key, value] of Object.entries(req.query)) {
-  //   console.log(`${key}: ${value}`);
-  // }
-  // results = Queue.find((element) => element.queueNo == queueNo);
-  // results = Queue.filter((element) => element.date == date);
   const { queueNo = null, date = null } = req.query;
   if (queueNo && date) {
     results = Queue.filter(
@@ -65,46 +57,7 @@ app.get("/queues", async (req, res) => {
     }
   }
 
-  // if (queueNo) {
-  //   results = Queue.find((element) => element.queueNo == queueNo || element.date == date);
-  //   // if (typeof queueNo !== "undefined") {
-  //   // } else {
-  //   //   if (typeof date !== "undefined") {
-  //   //     results = Queue.filter((element) => element.date == date);
-  //   //     console.log("date");
-  //   //   }
-  //   // }
-  // } else {
-  //   if (date) {
-  //     results = Queue.filter((element) => element.date == date);
-  //   } else {
-  //     results = Queue;
-  //   }
-  // }
   res.send(results).status(200);
-  // for (const [key, value] of Object.entries(req.query)) {
-  //   console.log(`${key}: ${value.length}`);
-  // }
-  // if (queueNo === "undefined" && date === "undefined") {
-  //   results = Queue;
-  // } else {
-  //   console.log(queueNo);
-  //   console.log(date);
-  // }
-  // res.send(results).status(200);
-  // for (const [key, value] of Object.entries(query)) {
-  //   // if (typeof value !== "undefined") {
-  //   // } else { }
-  //   // console.log(value);
-  //   Object.entries(value).forEach(([key2, value2]) => {
-  //     if (typeof value2 !== "undefined") {
-  //       if (value2.length > 0) {
-  //         Queue.find((element) => element[key2] == value2);
-  //         res.send(Queue).status(200);
-  //       }
-  //     }
-  //   });
-  // }
   // if (typeof queueNo === "undefined") {
   //   // results = await collection.find({}).toArray();
   //   results = Queue;
@@ -133,26 +86,38 @@ app.get("/queues/:id", async (req, res) => {
 
 app.post("/queues", async (req, res) => {
   const payload = req.body;
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  var test = [];
+  test.push(payload);
+  var getLastDigit = Queue[Queue.length - 1].queueDigit;
+  var number = Number(getLastDigit) + 1;
+  var paddedNumber = number.toString().padStart(4, "0");
+  var dateTime = today.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+  let mm = today.getMonth() + 1; // Months start at 0!
+  let dd = today.getDate();
+
+  if (dd < 10) dd = "0" + dd;
+  if (mm < 10) mm = "0" + mm;
+  // A-20230201-0010
+  var reunQueueNumber = "A-" + yyyy + mm + dd + "-" + paddedNumber;
+  var formattedToday = dd + "/" + mm + "/" + yyyy;
+  payload.queueNo = reunQueueNumber;
+  payload.queueDigit = paddedNumber;
+  payload.date = formattedToday;
+  payload.dateTime = dateTime;
+  // console.log(test);
   Queue.push(payload);
-  res.status(201).json(req.body + " : was Created");
+  // res.status(201).json(req.body + " : was Created");
   // let collection = await database.collection("queues");
   // let result = await collection.insertOne(newDocument);
-  // res.send(result).status(204);
+  res.send(payload).status(204);
 });
 
 app.listen(PORT, () => {
   console.log(`Application is running on port ${PORT}`);
 });
-// ngrok.connect(
-//   {
-//     proto: "http",
-//     addr: process.env.PORT,
-//   },
-//   (err, url) => {
-//     if (err) {
-//       console.error("Error while connecting Ngrok", err);
-//       return new Error("Ngrok Failed");
-//     }
-//   }
-// );
-// module.exports = app;
