@@ -1,5 +1,3 @@
-//A-{ปีเดือนวัน}-(running 4ตัว  ex 0010,0020 )
-//A-20230201-0010
 require("dotenv").config();
 const api = require("./routes/queue");
 var bodyParser = require("body-parser");
@@ -10,12 +8,8 @@ const ngrok = require("ngrok");
 var cors = require("cors");
 const Queue = require("./data/queue.json");
 app.use(express.json());
-// const corsOptions = {
-//   origin: "https://daae-101-109-242-76.ap.ngrok.io",
-// };
-// app.use(cors(corsOptions));
+
 app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
 app.use(bodyParser.json());
 // const corsOptions = {
 //   origin: "https://daae-101-109-242-76.ap.ngrok.io",
@@ -36,6 +30,29 @@ app.use(function (req, res, next) {
 });
 app.set("trust proxy", true);
 // app.use("/api", api);
+
+function getDate(params) {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  var result;
+  let mm = today.getMonth() + 1; // Months start at 0!
+  let dd = today.getDate();
+  if (dd < 10) dd = "0" + dd;
+  if (mm < 10) mm = "0" + mm;
+  if (params === "createQ") {
+    result = yyyy + mm + dd;
+  } else if (params === "date") {
+    result = dd + "/" + mm + "/" + yyyy;
+  } else if (params === "time") {
+    result = today.toLocaleString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
+  }
+
+  return result;
+}
 
 app.get("/queues", async (req, res) => {
   let results;
@@ -93,15 +110,24 @@ app.put("/queues/:id", async (req, res) => {
   } else {
     for (const [key, value] of Object.entries(payload)) {
       if (key == "inspection") {
-        console.log(result[key]);
+        Object.entries(value).forEach(([key2, value2]) => {
+          result[key][key2] = value2;
+          // console.log(`${key2} ${value2}`);
+        });
       } else if (key == "weight") {
-        console.log(result[key]);
+        Object.entries(value).forEach(([key2, value2]) => {
+          if (key2 == "dateTimeIn" || key2 == "dateTimeOut") {
+            result[key][key2] = getDate("date") + " " + getDate("time");
+          } else {
+            result[key][key2] = value2;
+          }
+        });
       }
       // console.log(`${key}: ${value}`);
     }
   }
 
-  res.send("ok").status(200);
+  res.send(result).status(200);
   // let collection = await database.collection("queues");
   // let query = { queueNo: id };
   // let result = await collection.findOne(query);
@@ -112,30 +138,16 @@ app.put("/queues/:id", async (req, res) => {
 
 app.post("/queues", async (req, res) => {
   const payload = req.body;
-  const today = new Date();
-  const yyyy = today.getFullYear();
-  var test = [];
-  test.push(payload);
   var getLastDigit = Queue[Queue.length - 1].queueDigit;
   var number = Number(getLastDigit) + 1;
   var paddedNumber = number.toString().padStart(4, "0");
-  var dateTime = today.toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  });
-  let mm = today.getMonth() + 1; // Months start at 0!
-  let dd = today.getDate();
 
-  if (dd < 10) dd = "0" + dd;
-  if (mm < 10) mm = "0" + mm;
   // A-20230201-0010
-  var reunQueueNumber = "A-" + yyyy + mm + dd + "-" + paddedNumber;
-  var formattedToday = dd + "/" + mm + "/" + yyyy;
+  var reunQueueNumber = "A-" + getDate("createQ") + "-" + paddedNumber;
   payload.queueNo = reunQueueNumber;
   payload.queueDigit = paddedNumber;
-  payload.date = formattedToday;
-  payload.dateTime = dateTime;
+  payload.date = getDate("date");
+  payload.dateTime = getDate("time");
   // console.log(test);
   Queue.push(payload);
   // res.status(201).json(req.body + " : was Created");
