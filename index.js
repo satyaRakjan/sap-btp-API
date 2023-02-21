@@ -84,6 +84,23 @@ app.get("/queues/:id", async (req, res) => {
   // else res.send(result).status(200);
 });
 
+app.put("/queues/:id", async (req, res) => {
+  const { id } = req.params;
+  const payload = req.body;
+  console.log("id");
+  console.log(id);
+  console.log("payload");
+  console.log(payload);
+
+  res.send("ok").status(200);
+  // let collection = await database.collection("queues");
+  // let query = { queueNo: id };
+  // let result = await collection.findOne(query);
+
+  // if (!result) res.send("Not found").status(404);
+  // else res.send(result).status(200);
+});
+
 app.post("/queues", async (req, res) => {
   const payload = req.body;
   const today = new Date();
