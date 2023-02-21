@@ -1,3 +1,5 @@
+//A-{ปีเดือนวัน}-(running 4ตัว  ex 0010,0020 )
+//A-20230201-0010
 require("dotenv").config();
 const api = require("./routes/queue");
 var bodyParser = require("body-parser");
@@ -34,25 +36,45 @@ app.set("trust proxy", true);
 app.get("/queues", async (req, res) => {
   // var queueData = Queue;
   let results;
-  const queueNo = req.query.queueNo;
-  const date = req.query.date;
-  console.log(req.query);
-  if (queueNo) {
-    results = Queue.find((element) => element.queueNo == queueNo);
-    // if (typeof queueNo !== "undefined") {
-    // } else {
-    //   if (typeof date !== "undefined") {
-    //     results = Queue.filter((element) => element.date == date);
-    //     console.log("date");
-    //   }
-    // }
+  // const queueNo = req.query.queueNo;
+  // const date = req.query.date;
+
+  // for (const [key, value] of Object.entries(req.query)) {
+  //   console.log(`${key}: ${value}`);
+  // }
+  // results = Queue.find((element) => element.queueNo == queueNo);
+  // results = Queue.filter((element) => element.date == date);
+  const { queueNo = null, date = null } = req.query;
+  if (queueNo && date) {
+    results = Queue.find(
+      (element) => element.queueNo == queueNo && element.date == date
+    );
   } else {
-    if (date) {
+    if (date.length > 0) {
       results = Queue.filter((element) => element.date == date);
+    } else if (queueNo.length > 0) {
+      results = Queue.find((element) => element.queueNo == queueNo);
     } else {
       results = Queue;
     }
   }
+
+  // if (queueNo) {
+  //   results = Queue.find((element) => element.queueNo == queueNo || element.date == date);
+  //   // if (typeof queueNo !== "undefined") {
+  //   // } else {
+  //   //   if (typeof date !== "undefined") {
+  //   //     results = Queue.filter((element) => element.date == date);
+  //   //     console.log("date");
+  //   //   }
+  //   // }
+  // } else {
+  //   if (date) {
+  //     results = Queue.filter((element) => element.date == date);
+  //   } else {
+  //     results = Queue;
+  //   }
+  // }
   res.send(results).status(200);
   // for (const [key, value] of Object.entries(req.query)) {
   //   console.log(`${key}: ${value.length}`);
