@@ -87,10 +87,19 @@ app.get("/queues/:id", async (req, res) => {
 app.put("/queues/:id", async (req, res) => {
   const { id } = req.params;
   const payload = req.body;
-  console.log("id");
-  console.log(id);
-  console.log("payload");
-  console.log(payload);
+  var result = Queue.find((element) => element.queueNo === id);
+  if (typeof result === "undefined") {
+    result = "Not Found";
+  } else {
+    for (const [key, value] of Object.entries(payload)) {
+      if (key == "inspection") {
+        console.log(result[key]);
+      } else if (key == "weight") {
+        console.log(result[key]);
+      }
+      // console.log(`${key}: ${value}`);
+    }
+  }
 
   res.send("ok").status(200);
   // let collection = await database.collection("queues");

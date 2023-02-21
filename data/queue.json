@@ -16,31 +16,15 @@
       "matertialDes": "ถ่านหิน",
       "DesEng": "coal"
     },
-    "inspection": [
-      {
-        "inspecRound": 1,
-        "listInspec": [
-          {
-            "inspecName": "%Dry",
-            "Specifications": "< 13.0",
-            "summry": "15.0"
-          },
-          {
-            "Characteristic": "%Contaminated",
-            "Specifications": "> 45.0",
-            "summry": "45.0"
-          },
-          {
-            "Characteristic": "%Completeion",
-            "Specifications": "ผลตรวจด้านกายภาพ : ผ่าน",
-            "summry": "ผ่าน"
-          }
-        ],
-        "summryResult": "ผ่าน",
-        "changeGrade": true,
-        "deductPrice": "5,000.00"
-      }
-    ],
+    "inspection": {
+      "%Dry": null,
+      "%Contaminated": null,
+      "%Complete": null,
+      "ChangeFlag": null,
+      "ChangeMat": null,
+      "DeductFlag": null,
+      "DeductPrice": null
+    },
     "weight": {
       "truckWeightID": "TW01",
       "weightIn": "5000",
@@ -67,31 +51,15 @@
       "matertialDes": "ถ่านหิน",
       "DesEng": "coal"
     },
-    "inspection": [
-      {
-        "inspecRound": 1,
-        "listInspec": [
-          {
-            "inspecName": "%Dry",
-            "Specifications": "< 13.0",
-            "summry": "15.0"
-          },
-          {
-            "Characteristic": "%Contaminated",
-            "Specifications": "> 45.0",
-            "summry": "45.0"
-          },
-          {
-            "Characteristic": "%Completeion",
-            "Specifications": "ผลตรวจด้านกายภาพ : ผ่าน",
-            "summry": "ผ่าน"
-          }
-        ],
-        "summryResult": "ผ่าน",
-        "changeGrade": true,
-        "deductPrice": "5,000.00"
-      }
-    ],
+    "inspection": {
+      "%Dry": null,
+      "%Contaminated": null,
+      "%Complete": null,
+      "ChangeFlag": null,
+      "ChangeMat": null,
+      "DeductFlag": null,
+      "DeductPrice": null
+    },
     "weight": {
       "truckWeightID": "TW01",
       "weightIn": "5000",
@@ -118,31 +86,15 @@
       "matertialDes": "ถ่านหิน",
       "DesEng": "coal"
     },
-    "inspection": [
-      {
-        "inspecRound": 1,
-        "listInspec": [
-          {
-            "inspecName": "%Dry",
-            "Specifications": "< 13.0",
-            "summry": "15.0"
-          },
-          {
-            "Characteristic": "%Contaminated",
-            "Specifications": "> 45.0",
-            "summry": "45.0"
-          },
-          {
-            "Characteristic": "%Completeion",
-            "Specifications": "ผลตรวจด้านกายภาพ : ผ่าน",
-            "summry": "ผ่าน"
-          }
-        ],
-        "summryResult": "ผ่าน",
-        "changeGrade": true,
-        "deductPrice": "5,000.00"
-      }
-    ],
+    "inspection": {
+      "%Dry": null,
+      "%Contaminated": null,
+      "%Complete": null,
+      "ChangeFlag": null,
+      "ChangeMat": null,
+      "DeductFlag": null,
+      "DeductPrice": null
+    },
     "weight": {
       "truckWeightID": "TW01",
       "weightIn": "5000",
