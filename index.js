@@ -104,6 +104,7 @@ app.get("/queues/:id", async (req, res) => {
 app.put("/queues/:id", async (req, res) => {
   const { id } = req.params;
   const payload = req.body;
+  console.log(payload);
   var result = Queue.find((element) => element.queueNo === id);
   if (typeof result === "undefined") {
     result = "Not Found";
