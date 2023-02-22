@@ -40,7 +40,7 @@
   {
     "queueNo": "A-20232001-0011",
     "queueDigit": "0011",
-    "Truckcode": "ERS 8579 NJ",
+    "Truckcode": "MC 1171 YMCA",
     "TruckType": "0004 รถพ่วง",
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
@@ -78,7 +78,7 @@
   {
     "queueNo": "A-20230120-0012",
     "queueDigit": "0012",
-    "Truckcode": "1234-01-2/ตก",
+    "Truckcode": "KFC 1150 Y2K",
     "TruckType": "0004 รถพ่วง",
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
