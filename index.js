@@ -131,6 +131,8 @@ app.put("/queues/:id", async (req, res) => {
       // console.log(`${key}: ${value}`);
     }
   }
+  var a = Math.floor(Math.random() * 5000 + 5000);
+  result.comodity = a;
 
   res.send(getDate("date")).status(200);
   // let collection = await database.collection("queues");
