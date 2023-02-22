@@ -118,6 +118,8 @@ app.put("/queues/:id", async (req, res) => {
         Object.entries(value).forEach(([key2, value2]) => {
           if (key2 == "dateTimeIn" || key2 == "dateTimeOut") {
             result[key][key2] = getDate("date") + " " + getDate("time");
+          } else if (key2 == "date") {
+            result[key][key2] = getDate("date");
           } else {
             result[key][key2] = value2;
           }

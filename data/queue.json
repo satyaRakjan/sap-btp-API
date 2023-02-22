@@ -30,12 +30,13 @@
       "weightIn": "5000",
       "weightOut": "0.000",
       "weightSummary": "5000",
+      "date": "20/01/2023",
       "dateTimeIn": "20/01/2023 01:30 PM",
       "dateTimeOut": "20/01/2023 02:00 PM"
     }
   },
   {
-    "queueNo": "A-1002221209-0011",
+    "queueNo": "A-20232001-0011",
     "queueDigit": "0011",
     "Truckcode": "1234-01-2/ตก",
     "TruckType": "0004 รถพ่วง",
@@ -65,6 +66,7 @@
       "weightIn": "5000",
       "weightOut": "0.000",
       "weightSummary": "5000",
+      "date": "20/01/2023",
       "dateTimeIn": "20/01/2023 01:30 PM",
       "dateTimeOut": "20/01/2023 02:00 PM"
     }
@@ -100,6 +102,7 @@
       "weightIn": "5000",
       "weightOut": "0.000",
       "weightSummary": "5000",
+      "date": "20/01/2023",
       "dateTimeIn": "20/01/2023 01:30 PM",
       "dateTimeOut": "20/01/2023 02:00 PM"
     }
