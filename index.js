@@ -129,7 +129,7 @@ app.put("/queues/:id", async (req, res) => {
     }
   }
 
-  res.send(result).status(200);
+  res.send(getDate("date")).status(200);
   // let collection = await database.collection("queues");
   // let query = { queueNo: id };
   // let result = await collection.findOne(query);
