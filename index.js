@@ -124,6 +124,8 @@ app.put("/queues/:id", async (req, res) => {
             result[key][key2] = value2;
           }
         });
+      } else if (key == "PO") {
+        result[key] = value;
       }
       // console.log(`${key}: ${value}`);
     }

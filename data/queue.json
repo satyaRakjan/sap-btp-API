@@ -7,6 +7,7 @@
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
     "sequence": "รอขึ้นลง",
+    "PO": false,
     "vendor": {
       "vendorCode": "VD01",
       "vendorlDes": "INTEQC"
@@ -43,6 +44,7 @@
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
     "sequence": "รอขึ้นลง",
+    "PO": false,
     "vendor": {
       "vendorCode": "VD01",
       "vendorlDes": "INTEQC"
@@ -79,6 +81,7 @@
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
     "sequence": "รอขึ้นลง",
+    "PO": false,
     "vendor": {
       "vendorCode": "VD01",
       "vendorlDes": "INTEQC"
