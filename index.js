@@ -105,7 +105,6 @@ app.put("/queues/:id", async (req, res) => {
   const { id } = req.params;
   const payload = req.body;
   console.log(payload);
-  var randomCM = Math.floor(Math.random() * 5000 + 5000);
   var result = Queue.find((element) => element.queueNo === id);
   if (typeof result === "undefined") {
     result = "Not Found";
@@ -113,12 +112,7 @@ app.put("/queues/:id", async (req, res) => {
     for (const [key, value] of Object.entries(payload)) {
       if (key == "inspection") {
         Object.entries(value).forEach(([key2, value2]) => {
-          if (key2 == "comodity") {
-            result[key][key2] = randomCM;
-          } else {
-            result[key][key2] = value2;
-          }
-
+          result[key][key2] = value2;
           // console.log(`${key2} ${value2}`);
         });
       } else if (key == "weight") {
@@ -137,8 +131,8 @@ app.put("/queues/:id", async (req, res) => {
       // console.log(`${key}: ${value}`);
     }
   }
-
-  // result.comodity = a;
+  var a = Math.floor(Math.random() * 5000 + 5000);
+  result.comodity = a;
 
   res.send(getDate("date")).status(200);
   // let collection = await database.collection("queues");

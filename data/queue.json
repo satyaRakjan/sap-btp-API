@@ -8,6 +8,7 @@
     "dateTime": "01:24 PM",
     "sequence": "รอขึ้นลง",
     "PO": false,
+    "comodity": "5000",
     "vendor": {
       "vendorCode": "VD01",
       "vendorlDes": "INTEQC"
@@ -24,7 +25,6 @@
       "ChangeFlag": "",
       "ChangeMat": "",
       "DeductFlag": "",
-      "comodity": "0",
       "DeductPrice": ""
     },
     "weight": {
@@ -63,7 +63,6 @@
       "ChangeFlag": "",
       "ChangeMat": "",
       "DeductFlag": "",
-      "comodity": "0",
       "DeductPrice": ""
     },
     "weight": {
@@ -102,7 +101,6 @@
       "ChangeFlag": "",
       "ChangeMat": "",
       "DeductFlag": "",
-      "comodity": "0",
       "DeductPrice": ""
     },
     "weight": {
