@@ -2,7 +2,7 @@
   {
     "queueNo": "A-20230201-0010",
     "queueDigit": "0010",
-    "Truckcode": "1234-01-2/ตก",
+    "Truckcode": "ERS 8579 NY",
     "TruckType": "0004 รถพ่วง",
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
@@ -40,7 +40,7 @@
   {
     "queueNo": "A-20232001-0011",
     "queueDigit": "0011",
-    "Truckcode": "1234-01-2/ตก",
+    "Truckcode": "ERS 8579 NJ",
     "TruckType": "0004 รถพ่วง",
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
