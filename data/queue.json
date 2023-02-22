@@ -25,7 +25,7 @@
       "ChangeFlag": "",
       "ChangeMat": "",
       "DeductFlag": "",
-      "DeductPrice": ""
+      "DeductPrice": "500"
     },
     "weight": {
       "truckWeightID": "TW01",
