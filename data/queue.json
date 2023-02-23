@@ -7,7 +7,7 @@
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
     "sequence": "รอขึ้นลง",
-    "PO": false,
+    "PO": "",
     "comodity": "5000",
     "vendor": {
       "vendorCode": "VD01",
@@ -45,7 +45,7 @@
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
     "sequence": "รอขึ้นลง",
-    "PO": false,
+    "PO": "",
     "comodity": "0",
     "vendor": {
       "vendorCode": "VD01",
@@ -83,7 +83,7 @@
     "date": "20/01/2023",
     "dateTime": "01:24 PM",
     "sequence": "รอขึ้นลง",
-    "PO": false,
+    "PO": "",
     "comodity": "0",
     "vendor": {
       "vendorCode": "VD01",
